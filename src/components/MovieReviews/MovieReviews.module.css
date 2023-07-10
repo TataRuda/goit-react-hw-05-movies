@@ -1,0 +1,15 @@
+.listReviews {
+    list-style: none;
+}
+.reviewAuthor {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+}
+.reviewContent {
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic; 
+    width: 750px;
+    text-align: justify;
+}

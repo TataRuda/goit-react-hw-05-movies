@@ -1,0 +1,36 @@
+.searchForm {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+
+}
+.searchInput {
+    font-size: 20px;
+    padding: 3px 5px;
+    border-radius: 2px;
+    border: 1px solid gray;
+
+}
+.searchInput:hover, 
+.searchInput:focus,
+.searchInput:active  {
+    border: 2px solid orangered;
+}
+
+.searchInput::placeholder {
+    font-size: 12px;
+}
+
+.searchBtn,
+.searchBtn:active {
+    border-radius: 2px;
+    border: none;
+    width: 100px;
+    font-size: 14px;
+    padding: 7px 5px;
+    text-align: center;
+    cursor: pointer;
+
+}

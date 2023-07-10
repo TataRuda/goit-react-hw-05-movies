@@ -1,8 +1,10 @@
 import React from 'react'
 import { TrendingFilms } from 'components/TrendingFilms/TrendingFilms'
 
-export const Home = () => {
+const Home = () => {
   return (
     <TrendingFilms/>
   )
 }
+
+export default Home;

@@ -42,17 +42,17 @@ export const getMovieDetails = async movieId => {
 
 // information about the film cast
 export const getMovieCredits = async (movieId) => {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`;
-
   try {
-    const response = await axios.get(url);
+    const response = await axios.get(
+      `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
+    );
     const { cast } = response.data;
 
     return cast.map(({ id, name, profile_path, character }) => ({
       id,
       name,
       character,
-      photo: profile_path ? `https://image.tmdb.org/t/p/w500${profile_path}` : null,
+      photo: profile_path ? `https://image.tmdb.org/t/p/w200${profile_path}` : `https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg`,
     }));
   } catch (error) {
     console.error('Error fetching movie credits:', error);
@@ -60,9 +60,17 @@ export const getMovieCredits = async (movieId) => {
   }
 };
 
-// information about the film cast
-export const getMovieReviews = (movieId) => {
-    const url = `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`;
-    return axios.get(url);
+// information about the film reviews
+export const getMovieReviews = async (movieId) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`
+    );
+    const { results } = response.data;
+    return results.map(({ id, author, content }) => ({id, author, content }));
+  } catch (error) {
+    console.error('Error fetching movie reviews:', error);
+    return [];
+  }
 };
 

@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ListMovies } from 'components/ListMovies/ListMovies';
 import { useLocation } from 'react-router-dom';
+import css from './Movies.module.css'
 
-export const Movies = () => {
+const Movies = () => {
   const [filter, setFilter] = useState('');
   const location = useLocation();
   const query = new URLSearchParams(location.search).get('query');
-
-  useEffect(() => {
-    setFilter(query);
-  }, [query]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -27,18 +24,25 @@ export const Movies = () => {
     window.history.replaceState(null, null, newUrl);
   };
 
+  useEffect(() => {
+    setFilter(query);
+  }, [query]);
+
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className={css.searchForm} onSubmit={handleSubmit}>
         <input
+        className={css.searchInput}
           type="text"
           name="search"
-          placeholder="Enter the name of the film you want to find"
+          placeholder="Enter the name of the movie in English"
         />
-        <button type="submit">Search</button>
+        <button className={css.searchBtn} type="submit">Search</button>
       </form>
       {filter && <ListMovies filter={filter} />}
     </div>
   );
-}
+};
+
+export default Movies;
 

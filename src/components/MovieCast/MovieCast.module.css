@@ -1,0 +1,15 @@
+.listCast{
+    padding-left: 0px;
+    margin: 0px;
+    list-style: none;
+    display: inline-grid;
+    grid-template-columns: 300px 300px 300px;
+
+}
+.photoActor {
+    display: block;
+    object-fit: cover;
+    width: 200px;
+    height: 300px;
+    border-radius: 4px;
+}

@@ -1,0 +1,37 @@
+.cardMovie {
+    display: flex;
+    flex-direction: row;
+}
+
+.cardMoviePoster {
+    display: block;
+    object-fit: contain;
+}
+
+.cardMovieDescription {
+    display: block;
+    padding-left: 20px;
+    width: 650px;
+}
+
+.cardMovieAddInfo {
+    margin-top: 20px;
+    margin-left: 0px;
+    padding: 0px;
+    font-size: 18px;
+    list-style: none;
+
+}
+.linkAddInfo,
+.linkAddInfo:active {
+    color:black;
+    cursor: pointer;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.linkAddInfo:focus, 
+.linkAddInfo:hover, 
+.linkAddInfo:active{
+    color: orangered;
+}

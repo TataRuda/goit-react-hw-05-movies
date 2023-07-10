@@ -1,0 +1,16 @@
+.listMovies {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+.itemMovie,
+.itemMovie:active {
+    color:black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.itemMovie:focus, 
+.itemMovie:hover {
+    color: orangered;
+}
